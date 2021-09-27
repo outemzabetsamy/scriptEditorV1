@@ -138,10 +138,12 @@ export default {
       this.document[this.selectedBlock]['attrs']['align']=`${alignement}`;
     },
     addBlock(type){
-      this.document.push({id:"block-5-upoyt",insert:'p',content:[{id:'inline-28-ytrp',insert:`${type}`,content:[{id: 'inline-29-tgjksa', insert: 'li', content: ''},]}],attrs:{align:''}})
+      //this.document.push({id:"block-5-upoyt",insert:'p',content:[{id:'inline-28-ytrp',insert:`${type}`,content:[{id: 'inline-29-tgjksa', insert: 'li', content: ''},]}],attrs:{align:''}})
+      this.document.splice(this.selectedBlock?this.selectedBlock+1:this.document.length+1,0,{id:"block-5-upoyt",insert:'p',content:[{id:'inline-28-ytrp',insert:`${type}`,content:[{id: 'inline-29-tgjksa', insert: 'li', content: ''},]}],attrs:{align:''}})
     },
     addType(type){
-      this.document.push({id:"block-5-upoyt",insert:`${type}`,content:'',attrs:{align:''}})
+      //this.document.push({id:"block-5-upoyt",insert:`${type}`,content:'',attrs:{align:''}})
+       this.document.splice(this.selectedBlock?this.selectedBlock+1:this.document.length+1,0,{id:"block-5-upoyt",insert:`${type}`,content:'',attrs:{align:''}})
     },
     renderDocument() {
       console.log("render document")
