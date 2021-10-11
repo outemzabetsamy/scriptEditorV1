@@ -4,6 +4,11 @@
       v-model:wrap="selectedWrap" v-model:viewHTML="viewHTML" :items="toolbarItems">
       </EditorToolbar>
       <EditorContent v-model="documentModel" :type="selectedType" :toggles="selectedToggles" :wrap="selectedWrap"/>
+   
+      <div class="testing" contenteditable="true" @keydown="entered">
+
+      </div>
+      
     <!--
     <div class="editor-content">
         <br/>
@@ -30,6 +35,7 @@ data(){
         selectedWrap:'',
         viewHTML: false,
         toolbarItems: [],
+        members: ['Roxie Miles', 'grace.carroll','samy']
     }
 },
 computed:{
@@ -51,7 +57,13 @@ components:
 {
 EditorToolbar,
 EditorContent,
+
 },
+methods:{
+    entered(e){
+        console.log(e)
+    }
+}
 }
 </script>
 
